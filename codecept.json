@@ -1,0 +1,54 @@
+{
+  "output": "./output",  
+  "helpers": {
+    "WebDriverIO": {
+      "url": "http://sp-helix-staging.herokuapp.com/site_characterization",
+      "browser": "chrome",      
+      "desiredCapabilities": {
+         "chromeOptions": {
+           "prefs": {
+            "args": "['start-maximized']",
+            "profile.default_content_settings.popups": "0",
+            "download.default_directory": "/home/arn/HELIX/Downloads"
+          }
+         }
+       }          
+    },
+    "FileSystem": {},
+    "Myhelper": {
+      "require": "./myhelper_helper.js"
+    }
+  },
+  "include": {
+    "I": "./steps_file.js"
+  },
+   "mocha": {
+     "reporterOptions": 
+     {
+        "codeceptjs-cli-reporter": 
+        {
+          "options": {
+          "verbose": true,
+          "steps": true
+        },
+          "stdout": "-"          
+        }, 
+        "reportDir": "output",
+        "reportFilename": "report_helix"        
+     },
+     "mochawesome": {
+       "stdout": "./output/console.log",
+       "options": {
+         "reportDir": "./output",
+         "reportFilename": "report"
+      }
+    }
+  },  
+  "bootstrap": false,
+  "teardown": null,
+  "hooks": [],
+  "gherkin": {},
+  "tests": "helix_test_file/*_test.js",
+  "timeout": 10000,
+  "name": "HELIX_SCRIPT_AUTOMATION"
+}
