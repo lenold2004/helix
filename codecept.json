@@ -3,7 +3,8 @@
   "helpers": {
     "WebDriverIO": {
       "url": "http://sp-helix-staging.herokuapp.com/site_characterization",
-      "browser": "chrome",      
+      "browser": "chrome",    
+      "windowSize": "maximize",  
       "desiredCapabilities": {
          "chromeOptions": {
            "prefs": {

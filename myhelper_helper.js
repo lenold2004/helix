@@ -21,6 +21,15 @@ deleteBomFile(bomFile){
     });
   }
 
+checkIfDataIsSave(p1, p2){
+    return new Promise((resolve, reject) => {
+          if (p1 == p2)
+             return resolve("TRUE " + p1 + " = " + p2);
+          else
+          	 return reject("FALSE " + p1 + " <> " + p2);
+    });
+  }
+
 BallastLessThanPassthrough(p1, p2){
     return new Promise((resolve, reject) => {
           if (parseInt(p1) < parseInt(p2))
